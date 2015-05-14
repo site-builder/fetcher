@@ -6,21 +6,24 @@ __Work in progress..__
 A Go app for fetching a shallow copy of a git repository and
 saving it to an Amazon S3 bucket.
 
+### Get gom and Install Dependencies
+
+This project uses [gom][3] to manage dependencies.
+
+    $ go get github.com/mattn/gom
+    $ gom install
+
 ### Running Specs
 
 Grab the [Ginkgo][1] test frameworks and the [Gomega][2] matcher
 library.
 
-    $ go get github.com/onsi/ginkgo/ginkgo
-    $ go get github.com/onsi/gomega
-
-Run the specs
-
-    $ ginkgo -r
+    $ gom exec ginkgo -r
 
 ### Running the app
 
-    $ go run main.go
+    $ gom run main.go
 
 [1]: http://onsi.github.io/ginkgo/
 [2]: http://onsi.github.io/gomega/
+[3]: https://github.com/mattn/gom

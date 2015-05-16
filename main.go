@@ -2,10 +2,10 @@ package main
 
 import (
 	"github.com/site-builder/fetcher/cloner"
-	"github.com/site-builder/fetcher/commander"
 	"github.com/site-builder/fetcher/locator"
 	"github.com/site-builder/fetcher/logger"
 	"github.com/site-builder/fetcher/randomizer"
+	"github.com/site-builder/fetcher/runner"
 )
 
 var log = logger.CreateLogger("main")
@@ -13,12 +13,11 @@ var log = logger.CreateLogger("main")
 func createTempDirectory() locator.Locator {
 	randomizer := randomizer.CreateRandomizer()
 	directory := locator.NewTempDirectoryLocator(randomizer)
-
-	command := commander.CreateCommand("mkdir", "-p", directory.Location())
+	runner := runner.NewRunner()
 
 	log.Info("Creating temporary directory %s", directory.Location())
 
-	if err := command.Run(); err != nil {
+	if err := runner.Run("mkdir", "-p", directory.Location()); err != nil {
 		log.Error("Error creating directory %s", err)
 	}
 
@@ -26,11 +25,11 @@ func createTempDirectory() locator.Locator {
 }
 
 func removeTempDirectory(directory locator.Locator) {
-	command := commander.CreateCommand("rm", "-rf", directory.Location())
+	runner := runner.NewRunner()
 
 	log.Info("Removing temporary directory %s", directory.Location())
 
-	if err := command.Run(); err != nil {
+	if err := runner.Run("rm", "-rf", directory.Location()); err != nil {
 		log.Error("Error removing directory %s", err)
 	}
 }

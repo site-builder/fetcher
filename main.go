@@ -50,8 +50,8 @@ func main() {
 	// destination := locator.NewGitLocator("git@github.com:site-builder/frontend.git")
 
 	withTemporaryDirectory(func(temp locator.Locator) {
-		cloner.Clone(runner, source, temp, logger.CreateLogger("cloner"))
-		// builder.Build(runner, temp, logger.CreateLogger("builder"))
-		// deployer.Deploy(runner, temp, logger.CreateLogger("deployer"))
+		cloner.Clone(runner, source, temp)
+		// builder.Build(runner, temp)
+		// deployer.Deploy(runner, temp)
 	})
 }

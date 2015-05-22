@@ -9,11 +9,13 @@ import (
 type Locator interface {
 	Kind() string
 	Location() string
+	Metadata() map[string]string
 }
 
 type locator struct {
 	kind     string
 	location string
+	metadata map[string]string
 }
 
 func NewFileLocator(location string) Locator {
@@ -21,7 +23,11 @@ func NewFileLocator(location string) Locator {
 }
 
 func NewGitLocator(location string) Locator {
-	return &locator{location: location, kind: "git"}
+	return &locator{location: location, kind: "git", metadata: map[string]string{"branch": "master"}}
+}
+
+func NewGitLocatorWithBranch(location string, branch string) Locator {
+	return &locator{location: location, kind: "git", metadata: map[string]string{"branch": branch}}
 }
 
 func generateTmpDirectoryName(randomizer randomizer.Randomizer) string {
@@ -38,4 +44,8 @@ func (repository *locator) Kind() string {
 
 func (repository *locator) Location() string {
 	return repository.location
+}
+
+func (repository *locator) Metadata() map[string]string {
+	return repository.metadata
 }

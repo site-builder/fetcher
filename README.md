@@ -24,6 +24,10 @@ library.
 
     $ gom run main.go
 
+### Running the app with logging
+
+    $ LOG=* gom run main.go
+
 [1]: http://onsi.github.io/ginkgo/
 [2]: http://onsi.github.io/gomega/
 [3]: https://github.com/mattn/gom

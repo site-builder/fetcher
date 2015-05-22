@@ -13,5 +13,8 @@ func Clone(runner runner.Runner, source locator.Locator, destination locator.Loc
 
 	if err := runner.Run("git", "clone", "--depth=1", source.Location(), destination.Location()); err != nil {
 		log.Error("Error cloning repo %s", err)
+		if message := err.Error(); message == "exit status 128" {
+			log.Info("Does the repo you're trying to clone exist?")
+		}
 	}
 }

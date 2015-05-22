@@ -13,9 +13,9 @@ func main() {
 	directoryHelper := directory_helper.NewDirectoryHelper(runner)
 	// destination := locator.NewGitLocator("git@github.com:site-builder/frontend.git")
 
-	directoryHelper.WithTemporaryDirectory(func(temp locator.Locator) {
-		cloner.Clone(runner, source, temp)
-		// builder.Build(runner, temp)
-		// deployer.Deploy(runner, temp)
+	directoryHelper.WithTemporaryDirectory(func(tmp locator.Locator) {
+		cloner.Clone(runner, source, tmp)
+		// builder.Build(runner, tmp)
+		// deployer.Deploy(runner, tmp)
 	})
 }

@@ -1,7 +1,7 @@
 package locator_test
 
 import (
-	. "github.com/site-builder/fetcher/locator"
+	. "github.com/site-builder/worker/locator"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
@@ -17,7 +17,7 @@ func (mockRandomizer *mockRandomizer) GenerateUUID() string {
 
 var _ = Describe("Locator", func() {
 	Context("#NewGitLocator", func() {
-		location := "git@github.com:site-builder/fetcher.git"
+		location := "git@github.com:site-builder/worker.git"
 
 		var locator Locator
 
@@ -38,7 +38,7 @@ var _ = Describe("Locator", func() {
 	})
 
 	Context("#NewGitLocatorWithBranch", func() {
-		location := "git@github.com:site-builder/fetcher.git"
+		location := "git@github.com:site-builder/worker.git"
 
 		var locator Locator
 

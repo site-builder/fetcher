@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/site-builder/fetcher/cloner"
-	"github.com/site-builder/fetcher/directory_helper"
-	"github.com/site-builder/fetcher/locator"
-	"github.com/site-builder/fetcher/runner"
+	"github.com/site-builder/worker/cloner"
+	"github.com/site-builder/worker/directory_helper"
+	"github.com/site-builder/worker/locator"
+	"github.com/site-builder/worker/runner"
 )
 
 func main() {

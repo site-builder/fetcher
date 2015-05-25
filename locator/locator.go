@@ -1,7 +1,7 @@
 package locator
 
 import (
-	"github.com/site-builder/fetcher/randomizer"
+	"github.com/site-builder/worker/randomizer"
 
 	"fmt"
 )

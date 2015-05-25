@@ -1,10 +1,10 @@
 package directory_helper
 
 import (
-	"github.com/site-builder/fetcher/locator"
-	"github.com/site-builder/fetcher/logger"
-	"github.com/site-builder/fetcher/randomizer"
-	"github.com/site-builder/fetcher/runner"
+	"github.com/site-builder/worker/locator"
+	"github.com/site-builder/worker/logger"
+	"github.com/site-builder/worker/randomizer"
+	"github.com/site-builder/worker/runner"
 )
 
 var log = logger.CreateLogger("directory_helper")

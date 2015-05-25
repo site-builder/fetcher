@@ -1,7 +1,7 @@
-# Fetcher 
+# Worker
 __Work in progress..__
 
-[ ![Codeship Status for site-builder/fetcher](https://codeship.com/projects/b3384680-cac8-0132-98c9-22c60209e864/status?branch=master)](https://codeship.com/projects/75592)
+[ ![Codeship Status for site-builder/worker](https://codeship.com/projects/b3384680-cac8-0132-98c9-22c60209e864/status?branch=master)](https://codeship.com/projects/75592)
 
 A Go app for fetching a shallow copy of a git repository and
 saving it to an Amazon S3 bucket.

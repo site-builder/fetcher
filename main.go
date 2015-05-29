@@ -10,11 +10,12 @@ import (
 func main() {
 	runner := runner.NewRunner()
 	source := locator.NewGitLocator("/tmp/frontend")
+	cloner := cloner.NewCloner(runner)
 	directoryHelper := directory_helper.NewDirectoryHelper(runner)
 	// destination := locator.NewGitLocator("git@github.com:site-builder/frontend.git")
 
 	directoryHelper.WithTemporaryDirectory(func(tmp locator.Locator) {
-		cloner.Clone(runner, source, tmp)
+		cloner.Clone(source, tmp)
 		// builder.Build(runner, tmp)
 		// deployer.Deploy(runner, tmp)
 	})

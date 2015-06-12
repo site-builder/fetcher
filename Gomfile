@@ -1,4 +1,0 @@
-gom "github.com/onsi/ginkgo/ginkgo"
-gom "github.com/onsi/gomega"
-gom "github.com/azer/logger"
-gom "github.com/satori/go.uuid"

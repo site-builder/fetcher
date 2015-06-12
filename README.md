@@ -14,7 +14,8 @@ go get \
   "github.com/onsi/ginkgo/ginkgo" \
   "github.com/onsi/gomega" \
   "github.com/azer/logger" \
-  "github.com/satori/go.uuid"
+  "github.com/satori/go.uuid" \
+  "gopkg.in/alecthomas/kingpin.v2"
 
 ```
 
@@ -33,10 +34,10 @@ $ ginkgo -r
 ```sh
 
 $ go run main.go \
-  -source-branch=master \
-  -source-repo=git@github.com:site-builder/test-site.git \
-  -destination-branch=gh-pages \
-  -destination-repo=git@github.com:site-builder/test-site.git
+  --source-branch=master \
+  --source-repo=git@github.com:site-builder/test-site.git \
+  --destination-branch=gh-pages \
+  --destination-repo=git@github.com:site-builder/test-site.git
 
 ```
 
@@ -45,10 +46,10 @@ $ go run main.go \
 ```sh
 
 $ LOG=* go run main.go \
-  -source-branch=master \
-  -source-repo=git@github.com:site-builder/test-site.git \
-  -destination-branch=gh-pages \
-  -destination-repo=git@github.com:site-builder/test-site.git
+  --source-branch=master \
+  --source-repo=git@github.com:site-builder/test-site.git \
+  --destination-branch=gh-pages \
+  --destination-repo=git@github.com:site-builder/test-site.git
 
 ```
 
@@ -65,10 +66,10 @@ $ go install
 ```sh
 
 $ LOG=* worker \
-  -source-branch=master \
-  -source-repo=git@github.com:site-builder/test-site.git \
-  -destination-branch=gh-pages \
-  -destination-repo=git@github.com:site-builder/test-site.git
+  --source-branch=master \
+  --source-repo=git@github.com:site-builder/test-site.git \
+  --destination-branch=gh-pages \
+  --destination-repo=git@github.com:site-builder/test-site.git
 
 ```
 
